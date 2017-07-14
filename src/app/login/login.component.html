@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div class="container">
+  <div class="root">
+    <button class="btn btn-primary" (click)="getData()">Http Call</button>
+    <button class="btn-primary btn" routerLink="/88787">Error Page</button>
+    <app-button (click)="oneButton()" name="Login"></app-button>
+    <app-button (click)="twoButton()" name="Register"></app-button>
+
+  </div>
+  <form (ngSubmit)="validate(f)" #f="ngForm">
+    <app-input type="text" name="username" id="username" hint="UserName" ngModel></app-input>
+    <app-input type="password" name="Password" id="Password" hint="Password" ngModel></app-input>
+    <app-input type="text" name="email" id="email" hint="Enter your Email" ngModel></app-input>
+    <app-button name="submit" type="submit"></app-button>
+  </form>
+
+
+</div>

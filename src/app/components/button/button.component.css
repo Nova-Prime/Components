@@ -1,0 +1,14 @@
+.btn {
+    border-radius: 0px;
+}
+
+button,
+button:active,
+button:focus,
+button:hover,
+.btn,
+.btn:active,
+.btn:focus,
+.btn:hover {
+    outline: none !important;
+}

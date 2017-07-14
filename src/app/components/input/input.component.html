@@ -1,0 +1,4 @@
+<div class="form-group">
+  <label [for]="id" *ngIf="lname">{{lname}}:</label>
+  <input [type]="type" class="form-control" [id]="id" [name]="name" [placeholder]="hint" [(ngModel)]="_value">
+</div>
