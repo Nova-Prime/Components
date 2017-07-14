@@ -11,4 +11,7 @@ export class ButtonComponent {
   @Input() name: string;
   @Input() type = 'button';
 
+  x() {
+
+  }
 }
