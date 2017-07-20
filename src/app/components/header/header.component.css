@@ -10,6 +10,10 @@
 .navbar-toggle .icon-bar {
     position: relative;
     transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
 }
 
 .navbar-toggle .icon-bar.first {
@@ -24,4 +28,16 @@
 .navbar-toggle .icon-bar.third {
     top: -6px;
     transform: rotate(-45deg);
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent;
+    border-bottom: 3px solid #345;
+}
+
+.logo-style {
+    font-family: 'Lemonada', cursive;
+    color: #345;
 }

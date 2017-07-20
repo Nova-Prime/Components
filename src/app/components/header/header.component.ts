@@ -12,8 +12,4 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
 
   }
-
-  BarAnimation() {
-    this.vis = !this.vis;
-  }
 }
