@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms/src/directives';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  gender: string;
   constructor(private _http: HttpService) {
   }
 
@@ -30,4 +30,8 @@ export class LoginComponent {
     console.log('Form details ', f.value);
   }
 
+
+  changeFunc() {
+    console.log('Radio Button ', this.gender);
+  }
 }

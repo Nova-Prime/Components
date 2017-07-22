@@ -7,10 +7,20 @@
     <app-button (click)="twoButton()" name="Register"></app-button>
 
   </div>
-  <form (ngSubmit)="validate(f)" #f="ngForm">
+  <form (ngSubmit)="validate(f)" #f="ngForm" autocomplete="off">
     <app-input type="text" name="username" id="username" hint="UserName" ngModel></app-input>
     <app-input type="password" name="Password" id="Password" hint="Password" ngModel></app-input>
     <app-input type="text" name="email" id="email" hint="Enter your Email" ngModel></app-input>
+
+    <div class="radio-group">
+      <app-radio [(ngModel)]="gender" (change)="changeFunc()" v="male" name="gender"></app-radio>
+      <app-radio [(ngModel)]="gender" (change)="changeFunc()" v="Female" name="gender"></app-radio>
+      <app-radio [(ngModel)]="gender" (change)="changeFunc()" v="Cross" name="gender"></app-radio>
+      <app-radio [(ngModel)]="gender" (change)="changeFunc()" v="Kolx" name="gender"></app-radio>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est laborum quaerat aliquam, autem repellat facilis asperiores
+      repudiandae. Possimus fuga suscipit dolorem expedita, voluptatibus debitis minus, fugit molestias maiores culpa.
+    </p>
     <app-button name="submit" type="submit"></app-button>
   </form>
 

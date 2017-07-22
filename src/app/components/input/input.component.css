@@ -1,3 +1,8 @@
 .form-control {
     border-radius: 0px;
 }
+
+.form-group:before {
+    border-left-width: 5px;
+    border-left-color: #345;
+}

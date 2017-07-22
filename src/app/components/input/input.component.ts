@@ -21,10 +21,9 @@ export class InputComponent implements ControlValueAccessor {
   @Input() name: String;
   @Input() hint: String = '';
 
-
-  protected _value: any;
-  protected onChange: (_: any) => void = noop;
-  protected onTouched: () => void = noop;
+  protected change = Function;
+  protected touch = Function;
+  _value: any;
 
   get value(): any {
     return this._value;
@@ -33,26 +32,25 @@ export class InputComponent implements ControlValueAccessor {
   set value(value: any) {
     if (value !== this._value) {
       this._value = value;
-      this.onChange(value);
+      this.change(value);
     }
   }
 
-  writeValue(value: any) {
-    if (value !== this._value) {
-      this._value = value;
+  public writeValue(obj: any): void {
+    if (obj !== this._value) {
+      this._value = obj;
+      this.change(obj);
     }
-
   }
-  registerOnChange(fn: any) {
-    this.onChange = fn;
 
+  public registerOnChange(fn: any): void {
+    this.change = fn;
   }
-  registerOnTouched(fn: any) {
-    this.onTouched = fn;
 
+  public registerOnTouched(fn: any): void {
+    this.touch = fn;
   }
-  // public hasErrors(input: NgModel): boolean {
-  //   return input.touched && this.errors != null;
-  // }
 
+  public setDisabledState(isDisabled: boolean): void {
+  }
 }
