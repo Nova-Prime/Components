@@ -1,3 +1,4 @@
+import { GlobalConfiguration } from '../config/config';
 import { RadioComponent } from './components/radio/radio';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +9,8 @@ import { RouterModule } from '@angular/router';
 
 
 import { HttpService } from '../services/HttpService';
+import { _HttpMiddleware } from '../services/httpMiddleware';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routes';
 import { ButtonComponent } from './components/button/button.component';
@@ -35,6 +38,8 @@ const _imports = [
 
 const _providers = [
   HttpService,
+  GlobalConfiguration,
+  _HttpMiddleware
 ];
 
 @NgModule({

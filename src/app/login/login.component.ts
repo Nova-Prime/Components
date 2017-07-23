@@ -14,7 +14,7 @@ export class LoginComponent {
   }
 
   getData() {
-    this._http.getData('https://jsonplaceholder.typicode.com/posts')
+    this._http.getData('/posts')
       .subscribe(res => {
         console.log(res);
       });
