@@ -1,28 +1,40 @@
 <app-header></app-header>
 <div class="container">
   <div class="root">
-    <button class="btn btn-primary" (click)="getData()">Http Call</button>
-    <button class="btn-primary btn" routerLink="/88787">Error Page</button>
+
+    <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-star"></span> Favorite</button>
+    <button class="btn btn-primary" (click)="getData()" type="button">
+        <span class="glyphicon glyphicon-earphone"></span> Http Call
+    </button>
+    <button class="btn-primary btn" routerLink="88787">Error Page</button>
     <app-button (click)="oneButton()" name="Login"></app-button>
-    <app-button (click)="twoButton()" name="Register"></app-button>
+    <app-button (click)="twoButton()">
+      <i class="fa fa-facebook fa-fw" aria-hidden="true"></i> FaceBook
+    </app-button>
+    <app-button class="google-plus" routerLink="./account">
+      <i class="fa fa-google-plus fa-fw" aria-hidden="true"></i> Google+
+    </app-button>
 
   </div>
   <form (ngSubmit)="validate(f)" #f="ngForm" autocomplete="off">
-    <app-input type="text" name="username" id="username" hint="UserName" ngModel></app-input>
-    <app-input type="password" name="Password" id="Password" hint="Password" ngModel></app-input>
-    <app-input type="text" name="email" id="email" hint="Enter your Email" ngModel></app-input>
+    <app-input type="text" name="username" hint="UserName" ngModel required></app-input>
+    <app-input type="password" name="Password" hint="Password" ngModel required></app-input>
+    <app-input type="text" name="email" hint="Enter your Email" ngModel></app-input>
+    <app-input type="tel" name="date" hint="Date of Birth" ngModel></app-input>
 
     <div class="radio-group">
-      <app-radio [(ngModel)]="gender" (change)="changeFunc()" v="male" name="gender"></app-radio>
-      <app-radio [(ngModel)]="gender" (change)="changeFunc()" v="Female" name="gender"></app-radio>
-      <app-radio [(ngModel)]="gender" (change)="changeFunc()" v="Cross" name="gender"></app-radio>
-      <app-radio [(ngModel)]="gender" (change)="changeFunc()" v="Kolx" name="gender"></app-radio>
+      <app-radio [(ngModel)]="gender" v="male" name="gender" required></app-radio>
+      <app-radio [(ngModel)]="gender" v="Female" name="gender" required></app-radio>
+      <app-radio [(ngModel)]="gender" v="Cross" name="gender" required></app-radio>
+      <app-radio [(ngModel)]="gender" v="Kolx" name="gender" required></app-radio>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est laborum quaerat aliquam, autem repellat facilis asperiores
       repudiandae. Possimus fuga suscipit dolorem expedita, voluptatibus debitis minus, fugit molestias maiores culpa.
     </p>
-    <app-button name="submit" type="submit"></app-button>
+    <app-button name="submit" type="submit" style="background: #345;"></app-button>
   </form>
 
 
 </div>
+
+<router-outlet></router-outlet>

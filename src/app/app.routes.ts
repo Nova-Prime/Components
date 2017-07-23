@@ -6,8 +6,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const route: Routes = [
-    { path: '', component: LoginComponent },
-    { path: 'login', component: LoginComponent },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    {
+        path: 'login', component: LoginComponent, children: [
+            {
+                path: 'account', component: PageNotFoundComponentComponent
+            }, {
+                path: 'Helloworld', component: PageNotFoundComponentComponent
+            }
+        ]
+    },
+    { path: 'test', component: PageNotFoundComponentComponent },
     { path: '**', component: PageNotFoundComponentComponent }
 ];
 

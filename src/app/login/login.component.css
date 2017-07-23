@@ -1,9 +1,11 @@
 .container {
     padding-top: 60px;
 }
-.root{
+
+.root {
     margin: 5px 0px;
 }
-.btn{
+
+.btn {
     border-radius: 0px;
 }

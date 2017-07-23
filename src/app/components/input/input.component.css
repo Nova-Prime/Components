@@ -2,7 +2,13 @@
     border-radius: 0px;
 }
 
-.form-group:before {
-    border-left-width: 5px;
-    border-left-color: #345;
+.form-control:focus {
+    border-color: #5cb85c;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.has-error .form-control:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
 }

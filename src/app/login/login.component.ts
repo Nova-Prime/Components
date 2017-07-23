@@ -27,7 +27,7 @@ export class LoginComponent {
     alert('two clicked');
   }
   validate(f: NgForm) {
-    console.log('Form details ', f.value);
+    console.table('Form details ', f.value);
   }
 
 
