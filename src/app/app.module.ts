@@ -8,8 +8,8 @@ import { RouterModule } from '@angular/router';
 
 
 
-import { HttpService } from '../services/HttpService';
 import { _HttpMiddleware } from '../services/httpMiddleware';
+import { AuthGuard } from '../services/Auth.guard';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routes';
@@ -37,9 +37,9 @@ const _imports = [
 ];
 
 const _providers = [
-  HttpService,
   GlobalConfiguration,
-  _HttpMiddleware
+  _HttpMiddleware,
+  AuthGuard
 ];
 
 @NgModule({

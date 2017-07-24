@@ -1,4 +1,3 @@
-import { HttpService } from '../../services/HttpService';
 
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms/src/directives';
@@ -10,14 +9,11 @@ import { NgForm } from '@angular/forms/src/directives';
 })
 export class LoginComponent {
   gender: string;
-  constructor(private _http: HttpService) {
+  constructor() {
   }
 
   getData() {
-    this._http.getData('/posts')
-      .subscribe(res => {
-        console.log(res);
-      });
+    
   }
 
   oneButton() {
