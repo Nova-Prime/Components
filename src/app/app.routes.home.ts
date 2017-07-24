@@ -10,7 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 export const HomeRouting: Routes = [
     {
         path: '', component: HomeComponent, children: [
-            { path: '', component: HomeRootComponent },
+            { path: '', component: HomeRootComponent, pathMatch: 'full' },
             { path: 'account', component: AccountComponent },
             { path: 'faq', component: FaqComponent },
             { path: 'help', component: HelpComponent },

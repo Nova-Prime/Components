@@ -1,11 +1,11 @@
 <h1> Home Page with Center Navigation</h1>
 <div class="container">
   <nav>
-    <a routerLink="/" routerLinkActive="active">Home</a>
-    <a routerLink="/account">My Account</a>
-    <a routerLink="/changepassword">ChangePassword</a>
-    <a routerLink="/faq">FAQ</a>
-    <a routerLink="/help">Help</a>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/account" routerLinkActive="active">My Account</a>
+    <a routerLink="/changepassword" routerLinkActive="active">ChangePassword</a>
+    <a routerLink="/faq" routerLinkActive="active">FAQ</a>
+    <a routerLink="/help" routerLinkActive="active">Help</a>
   </nav>
 
   <router-outlet></router-outlet>
