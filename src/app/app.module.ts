@@ -1,3 +1,11 @@
+import { HomeRootComponent } from './home-root/home-root.component';
+import { ForgotUsernameComponent } from './forgot-username/forgot-username.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { FaqComponent } from './faq/faq.component';
+import { HelpComponent } from './help/help.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AccountComponent } from './account/account.component';
+import { HomeComponent } from './home/home.component';
 import { GlobalConfiguration } from '../config/config';
 import { RadioComponent } from './components/radio/radio';
 import { NgModule } from '@angular/core';
@@ -26,7 +34,15 @@ const _declarations = [
   ButtonComponent,
   InputComponent,
   PageNotFoundComponentComponent,
-  RadioComponent
+  RadioComponent,
+  HomeComponent,
+  AccountComponent,
+  ChangePasswordComponent,
+  HelpComponent,
+  FaqComponent,
+  ForgotPasswordComponent,
+  ForgotUsernameComponent,
+  HomeRootComponent
 ];
 
 const _imports = [

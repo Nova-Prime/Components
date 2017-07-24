@@ -18,6 +18,6 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
     console.log(env);
-    console.error(this.config.env.Url);
+    console.log(this.config.env.Url);
   }
 }

@@ -1,11 +1,12 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms/src/directives';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class LoginComponent {
   gender: string;
@@ -13,7 +14,7 @@ export class LoginComponent {
   }
 
   getData() {
-    
+
   }
 
   oneButton() {
@@ -23,7 +24,7 @@ export class LoginComponent {
     alert('two clicked');
   }
   validate(f: NgForm) {
-    console.table('Form details ', f.value);
+    console.log('Form details ', f.value);
   }
 
 
