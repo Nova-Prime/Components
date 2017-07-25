@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot, CanActivateChild } from '@angular/router';
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
@@ -15,6 +15,6 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     }
 
     constructor(private router: Router) {
-        console.log("Called Constructor ");
+        console.log('Called Constructor ');
     }
 }

@@ -1,7 +1,6 @@
 import { concat } from 'rxjs/operator/concat';
 const dev = 'dev';
 function checkEnv() {
-    console.log('Came here :::');
     if (dev === 'dev') {
         return envxx;
     } else {

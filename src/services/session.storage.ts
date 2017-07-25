@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 export class SessionStorage {
-    public defaultValue = "";
+    public defaultValue = '';
 
     constructor() { }
 
