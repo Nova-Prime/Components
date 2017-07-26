@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare var google: any;
+declare const google: any;
 
 @Component({
   selector: 'app-home-root',
@@ -14,8 +14,11 @@ export class HomeRootComponent implements OnInit {
     if (document.getElementById('barchart_values')) {
       google.charts.load('current', { packages: ['corechart'] });
       google.charts.setOnLoadCallback(this.drawChart);
+    }
 
-
+    if (document.getElementById('piechart')) {
+      google.charts.load('current', { 'packages': ['corechart'] });
+      google.charts.setOnLoadCallback(this.drawPie)
     }
   }
   public drawChart() {
@@ -41,6 +44,25 @@ export class HomeRootComponent implements OnInit {
     };
 
     const chart = new google.visualization.BarChart(document.getElementById('barchart_values'));
+
+    chart.draw(data, options);
+  }
+  public drawPie() {
+
+    const data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Work', 11],
+      ['Eat', 2],
+      ['Commute', 2],
+      ['Watch TV', 2],
+      ['Sleep', 7]
+    ]);
+
+    const options = {
+      title: 'My Daily Activities'
+    };
+
+    const chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
     chart.draw(data, options);
   }
