@@ -24,11 +24,11 @@ export class HomeRootComponent implements OnInit {
   public drawChart() {
     const data = google.visualization.arrayToDataTable([
       ['City', '2010 Population'],
-      ['New York City, NY', 8175000],
-      ['Los Angeles, CA', 3792000],
-      ['Chicago, IL', 2695000],
-      ['Houston, TX', 2099000],
-      ['Philadelphia, PA', 1526000]
+      ['New York City, NY', 100],
+      ['Los Angeles, CA', 50],
+      ['Chicago, IL', 1],
+      ['Houston, TX', 2],
+      ['Philadelphia, PA', 3]
     ]);
 
     const options = {
@@ -59,7 +59,8 @@ export class HomeRootComponent implements OnInit {
     ]);
 
     const options = {
-      title: 'My Daily Activities'
+      title: 'My Daily Activities',
+      chartArea: {width: 400, height: 400}
     };
 
     const chart = new google.visualization.PieChart(document.getElementById('piechart'));
