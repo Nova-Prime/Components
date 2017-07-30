@@ -1,3 +1,4 @@
+import { Logger } from '../components/Logger';
 
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms/src/directives';
@@ -10,7 +11,7 @@ import { NgForm } from '@angular/forms/src/directives';
 })
 export class LoginComponent {
   gender: string;
-  constructor() {
+  constructor(private log: Logger) {
   }
 
   getData() {
@@ -22,9 +23,10 @@ export class LoginComponent {
   }
   twoButton() {
     alert('two clicked');
+    this.log.error(`crazy world ${2 + 3}`);
   }
   validate(f: NgForm) {
-    console.log('Form details ', f.value);
+    this.log.log('Form details ', f.value);
   }
 
 

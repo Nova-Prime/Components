@@ -24,7 +24,7 @@ export class HomeRootComponent implements OnInit {
   public drawChart() {
     const data = google.visualization.arrayToDataTable([
       ['City', '2010 Population'],
-      ['New York City, NY', 100],
+      ['New York City, NY', 0],
       ['Los Angeles, CA', 50],
       ['Chicago, IL', 1],
       ['Houston, TX', 2],
@@ -36,7 +36,10 @@ export class HomeRootComponent implements OnInit {
       chartArea: { width: '50%' },
       hAxis: {
         title: 'Total Population',
-        minValue: 0
+        minValue: 0,
+        viewWindow: {
+          min: 0
+        }
       },
       vAxis: {
         title: 'City'
@@ -60,7 +63,7 @@ export class HomeRootComponent implements OnInit {
 
     const options = {
       title: 'My Daily Activities',
-      chartArea: {width: 400, height: 400}
+      chartArea: { width: 400, height: 400 }
     };
 
     const chart = new google.visualization.PieChart(document.getElementById('piechart'));

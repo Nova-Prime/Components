@@ -7,25 +7,25 @@
             <span class="icon-bar" [ngClass]="{'second':vis}"></span>
             <span class="icon-bar" [ngClass]="{'third':vis}"></span>
         </button>
-      <a class="navbar-brand logo-style" routerLink="">DiGiSENSE</a>
+      <a class="navbar-brand logo-style" routerLink="/">DiGiSENSE</a>
     </div>
     <!-- /nav-bar header -->
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 
-        <li class="active">
-          <a routerLink="">
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" (click)="vis =! vis">
+          <a routerLink="/">
             <span class="fa fa-home fa-fw" aria-hidden="true"></span>Home
           </a>
         </li>
 
-        <li><a routerLink="./Helloworld">About</a></li>
-        <li><a>Contact</a></li>
+        <li [routerLinkActive]="['active']" (click)="vis =! vis"><a routerLink="/account">My Account</a></li>
+        <li [routerLinkActive]="['active']"><a routerLink="/changepassword">ChangePassword</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a>Action</a></li>
+            <li><a (click)='test()'>Action</a></li>
             <li><a>Another action</a></li>
             <li><a>Something else here</a></li>
             <li role="separator" class="divider"></li>

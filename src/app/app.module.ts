@@ -1,3 +1,4 @@
+import { Logger } from './components/Logger';
 import { HomeRootComponent } from './home-root/home-root.component';
 import { ForgotUsernameComponent } from './forgot-username/forgot-username.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -55,7 +56,8 @@ const _imports = [
 const _providers = [
   GlobalConfiguration,
   _HttpMiddleware,
-  AuthGuard
+  AuthGuard,
+  Logger
 ];
 
 @NgModule({
