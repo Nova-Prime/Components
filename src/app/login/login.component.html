@@ -1,4 +1,4 @@
- <app-header></app-header>
+<app-header></app-header>
 <div class="container">
   <div class="root">
 
@@ -11,13 +11,34 @@
     <app-button (click)="twoButton()">
       <i class="fa fa-facebook fa-fw" aria-hidden="true"></i> FaceBook
     </app-button>
-    <app-button class="google-plus" routerLink="./account" >
+    <app-button class="google-plus" routerLink="./account">
       <i class="fa fa-google-plus fa-fw" aria-hidden="true"></i> Google+
     </app-button>
 
   </div>
-  <form (ngSubmit)="validate(f)" #f="ngForm" autocomplete="off">
-    <app-input type="text" name="username" hint="UserName" ngModel required></app-input>
+  <form (ngSubmit)="validate(f)" #f="ngForm" autocomplete="off" novalidate name="FormName">
+
+
+    <app-input type="text" name="username" hint="UserName" ngModel id="name" required minlength="4" maxlength="24" #name="ngModel"></app-input>
+    <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+      <div [hidden]="!name?.errors.required">
+        Name is required
+      </div>
+      <div [hidden]="!name?.errors.minlength">
+        Name must be at least 4 characters long.
+      </div>
+      <div [hidden]="!name?.errors.maxlength">
+        Name cannot be more than 24 characters long.
+      </div>
+    </div>
+
+    <strong>Has input been touched: {{name.touched ? 'Yes' : 'No'}}</strong><br>
+    <strong>Is input untouched: {{name.untouched ? 'Yes' : 'No'}}</strong><br>
+    <strong>Is input dirty: {{name.dirty ? 'Yes' : 'No'}}</strong> <br>
+    <strong>Is input pristine: {{name.pristine ? 'Yes' : 'No'}}</strong>
+
+
+
     <app-input type="password" name="Password" hint="Password" ngModel required></app-input>
     <app-input type="text" name="email" hint="Enter your Email" ngModel></app-input>
     <app-input type="tel" name="date" hint="Date of Birth" ngModel></app-input>
@@ -38,7 +59,7 @@
 </div>
 
 <router-outlet></router-outlet>
- 
+
 
 <!-- <h1> Login Page </h1>
 <a routerLink="/">Home Page</a>

@@ -1,4 +1,4 @@
 <div class="form-group">
   <label [for]="name" *ngIf="lname">{{lname}}:</label>
-  <input [type]="type" class="form-control" [id]="name" [name]="name" [placeholder]="hint" [(ngModel)]="value">
+  <input [type]="type" class="form-control" [id]="name" [name]="name" [placeholder]="hint" [(ngModel)]="value" (blur)="onTouched($event)">
 </div>

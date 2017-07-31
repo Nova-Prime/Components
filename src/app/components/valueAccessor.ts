@@ -4,7 +4,7 @@ export class ValueAccessor implements ControlValueAccessor {
 
     protected change = Function;
     protected touched = Function;
-    _value: any;
+    _value: any = '';
 
     constructor() { }
 
@@ -20,10 +20,7 @@ export class ValueAccessor implements ControlValueAccessor {
     }
 
     public writeValue(obj: any): void {
-        if (obj !== this._value) {
-            this._value = obj;
-            this.change(obj);
-        }
+        this._value = obj;
     }
 
     public registerOnChange(fn: any): void {
@@ -37,4 +34,8 @@ export class ValueAccessor implements ControlValueAccessor {
     public setDisabledState(isDisabled: boolean): void {
 
     }
+    onTouched() {
+        this.touched(null);
+    }
+
 }
