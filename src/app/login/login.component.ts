@@ -1,7 +1,15 @@
+import { LocalPerson, RootObject } from './intf';
+import { Http } from '@angular/http';
 import { Logger } from '../components/Logger';
 
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms/src/directives';
+// import * as data from './sample.json';
+
+
+declare var require: any;
+const x = require('./sample.json');
+
 
 @Component({
   selector: 'app-login',
@@ -11,7 +19,10 @@ import { NgForm } from '@angular/forms/src/directives';
 })
 export class LoginComponent {
   gender: string;
-  constructor(private log: Logger) {
+  obj: string;
+
+  constructor(private log: Logger, private http: Http) {
+    console.log(x);
   }
 
   getData() {
