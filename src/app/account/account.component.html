@@ -4,10 +4,11 @@
 <div id="panel">
   <div id="color-palette"></div>
   <div>
-    <button id="delete-button">Delete Selected Shape</button>
+    <button id="delete-button" (click)="deleteSelectedShape()">Delete Selected Shape</button>
   </div>
   <div>
-    <button id="get-coods-button">Get Coodinates</button>
+    <button id="get-coods-button" (click)="getCoodinates()">Get Coodinates</button>
+    <button (click)="setDrawingMode()">Drawing Mode</button>
   </div>
   <div>
     <textarea id="info" style="position: absolute; font-family: Arial; font-size: 14px;"></textarea>

@@ -1,3 +1,5 @@
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { HttpClientModule } from '@angular/common/http';
 import { Logger } from './components/Logger';
 import { HomeRootComponent } from './home-root/home-root.component';
 import { ForgotUsernameComponent } from './forgot-username/forgot-username.component';
@@ -25,7 +27,7 @@ import { AppRoutingModule } from './app.routes';
 import { ButtonComponent } from './components/button/button.component';
 import { HeaderComponent } from './components/header/header.component';
 import { InputComponent } from './components/input/input.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent, ModalContentComponent } from './login/login.component';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 
 const _declarations = [
@@ -43,27 +45,32 @@ const _declarations = [
   FaqComponent,
   ForgotPasswordComponent,
   ForgotUsernameComponent,
-  HomeRootComponent
+  HomeRootComponent,
+  ModalContentComponent
 ];
 
 const _imports = [
   BrowserModule,
-  HttpModule,
+  HttpClientModule,
   FormsModule,
   AppRoutingModule,
+  ModalModule.forRoot(),
 ];
 
 const _providers = [
   GlobalConfiguration,
-  _HttpMiddleware,
+  // _HttpMiddleware,
   AuthGuard,
-  Logger
+  Logger,
 ];
 
 @NgModule({
   declarations: _declarations,
   imports: _imports,
   providers: _providers,
+  entryComponents: [ModalContentComponent
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { observable } from 'rxjs/symbol/observable';
 import { env } from '../config/config';
 import { Injectable } from '@angular/core';
 import {
@@ -22,9 +23,20 @@ export class InterceptedHttp extends Http {
         return super.request(url, options);
     }
 
-    get(url: string, options?: RequestOptionsArgs): Observable<Response> {
+    get(url: string, options?: RequestOptionsArgs): Observable<any> {
         url = this.updateUrl(url);
-        return super.get(url, this.getRequestOptionArgs(options));
+        return super.get(url, this.getRequestOptionArgs(options))
+            .catch(this.onCatch)
+            .map((res: Response) => {
+                this.onSuccess(res);
+                const xx: any = [
+                    { 'Hello': 'world' }
+                ];
+                res = xx;
+            },
+            (error: any) => {
+                this.onError(error);
+            });
     }
 
     post(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {
@@ -56,6 +68,19 @@ export class InterceptedHttp extends Http {
         options.headers.append('Content-Type', 'application/json');
 
         return options;
+    }
+
+
+    private onSuccess(res: Response) {
+        console.log(res);
+    }
+
+    private onError(error: any) {
+        console.log(error);
+    }
+
+    private onCatch(error: any, caught: Observable<any>): Observable<any> {
+        return Observable.throw(error);
     }
 }
 
