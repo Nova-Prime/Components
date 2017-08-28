@@ -1,4 +1,5 @@
 <div class="form-group">
   <label [for]="name" *ngIf="lname">{{lname}}:</label>
   <input [type]="type" class="form-control" [id]="name" [name]="name" [placeholder]="hint" [(ngModel)]="value" (blur)="onTouched($event)">
+  <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 </div>
