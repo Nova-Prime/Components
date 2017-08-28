@@ -1,3 +1,4 @@
+import { SelectComponent } from './components/select/select.component';
 import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HttpClientModule } from '@angular/common/http';
@@ -47,7 +48,8 @@ const _declarations = [
   ForgotPasswordComponent,
   ForgotUsernameComponent,
   HomeRootComponent,
-  ModalContentComponent
+  ModalContentComponent,
+  SelectComponent
 ];
 
 const _imports = [

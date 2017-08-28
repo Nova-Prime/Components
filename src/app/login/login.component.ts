@@ -54,6 +54,10 @@ interface RootObject {
 export class LoginComponent {
   gender: string;
   public modalRef: BsModalRef;
+  public data = [
+    'one', 'two', 'three', 'one', 'two', 'three', 'one', 'two', 'three', 'one', 'two', 'three',
+    'one', 'two', 'three', 'one', 'two', 'three', 'one', 'two', 'three', 'one', 'two', 'three'
+  ];
 
   constructor(private log: Logger, private http: HttpClient, private modalService: BsModalService, private s: SharedService) {
     console.log(x);

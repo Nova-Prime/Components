@@ -10,3 +10,26 @@
     border-radius: 0px;
 }
 
+.one {
+    padding-left: 6px;
+    position: relative;
+}
+
+.one:after {
+    content: '';
+    color: black;
+    position: absolute;
+    top: 25%;
+    height: 50%;
+    width: 3px;
+    background: #345;
+    left: 0;
+}
+
+@media only screen and (max-device-width:480px) {
+    /* styles for mobile browsers smaller than 480px; (iPhone) */
+    .one:after{
+        height: 100%;
+        top: 0;
+    }
+}

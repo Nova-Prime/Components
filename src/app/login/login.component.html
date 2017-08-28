@@ -19,22 +19,22 @@
   <form (ngSubmit)="validate(f)" #f="ngForm" autocomplete="off" novalidate name="FormName">
 
     <app-input type="text" name="username" hint="UserName" ngModel id="name" required minlength="4" maxlength="24" #name="ngModel"></app-input>
-    <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
-      <div [hidden]="!name?.errors.required">
+    <small *ngIf="name.errors && (name.dirty || name.touched)" class="form-text text-muted">
+      <p [hidden]="!name?.errors.required">
         Name is required
-      </div>
-      <div [hidden]="!name?.errors.minlength">
+      </p>
+      <small [hidden]="!name?.errors.minlength">
         Name must be at least 4 characters long.
-      </div>
-      <div [hidden]="!name?.errors.maxlength">
+      </small>
+    <small [hidden]="!name?.errors.maxlength">
         Name cannot be more than 24 characters long.
-      </div>
-    </div>
-
+      </small>
+    </small>
+    <!-- 
     <strong>Has input been touched: {{name.touched ? 'Yes' : 'No'}}</strong><br>
     <strong>Is input untouched: {{name.untouched ? 'Yes' : 'No'}}</strong><br>
     <strong>Is input dirty: {{name.dirty ? 'Yes' : 'No'}}</strong> <br>
-    <strong>Is input pristine: {{name.pristine ? 'Yes' : 'No'}}</strong>
+    <strong>Is input pristine: {{name.pristine ? 'Yes' : 'No'}}</strong> -->
 
 
 
@@ -43,14 +43,33 @@
     <app-input type="tel" name="date" hint="Date of Birth" ngModel></app-input>
 
     <div class="radio-group">
-      <app-radio [(ngModel)]="gender" v="male" name="gender" required></app-radio>
-      <app-radio [(ngModel)]="gender" v="Female" name="gender" required></app-radio>
-      <app-radio [(ngModel)]="gender" v="Cross" name="gender" required></app-radio>
-      <app-radio [(ngModel)]="gender" v="Kolx" name="gender" required></app-radio>
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est laborum quaerat aliquam, autem repellat facilis
+        asperiores repudiandae. Possimus fuga suscipit dolorem expedita, voluptatibus debitis minus, fugit molestias maiores
+        culpa.
+      </span>
+      <div class="one">
+        <app-radio [(ngModel)]="gender" v="male" name="gender" required></app-radio>
+        <app-radio [(ngModel)]="gender" v="Female" name="gender" required></app-radio>
+        <app-radio [(ngModel)]="gender" v="Cross" name="gender" required></app-radio>
+        <app-radio [(ngModel)]="gender" v="Kolx" name="gender" required></app-radio>
+      </div>
     </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est laborum quaerat aliquam, autem repellat facilis asperiores
-      repudiandae. Possimus fuga suscipit dolorem expedita, voluptatibus debitis minus, fugit molestias maiores culpa.
-    </p>
+
+    <div class="radio-group">
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est laborum quaerat aliquam, autem repellat facilis
+        asperiores repudiandae. Possimus fuga suscipit dolorem expedita, voluptatibus debitis minus, fugit molestias maiores
+        culpa.
+      </span>
+      <div class="one">
+        <app-radio [(ngModel)]="gender" v="male" name="gender" required></app-radio>
+        <app-radio [(ngModel)]="gender" v="Female" name="gender" required></app-radio>
+        <app-radio [(ngModel)]="gender" v="Cross" name="gender" required></app-radio>
+        <app-radio [(ngModel)]="gender" v="Kolx" name="gender" required></app-radio>
+      </div>
+    </div>
+
+
+    <app-select ngModel name="select" id="select-me" [options]="data"></app-select>
     <app-button name="submit" type="submit"></app-button>
   </form>
 
