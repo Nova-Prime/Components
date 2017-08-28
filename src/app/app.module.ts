@@ -1,3 +1,4 @@
+import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HttpClientModule } from '@angular/common/http';
 import { Logger } from './components/Logger';
@@ -55,6 +56,7 @@ const _imports = [
   FormsModule,
   AppRoutingModule,
   ModalModule.forRoot(),
+  BsDatepickerModule.forRoot()
 ];
 
 const _providers = [

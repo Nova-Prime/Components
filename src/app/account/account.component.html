@@ -7,11 +7,12 @@
     <button id="delete-button" (click)="deleteSelectedShape()">Delete Selected Shape</button>
   </div>
   <div>
-    <button id="get-coods-button" (click)="getCoodinates()">Get Coodinates</button>
+    <button id="get-coods-button" (click)="getcors()">Get Coodinates</button>
     <button (click)="setDrawingMode()">Drawing Mode</button>
   </div>
   <div>
     <textarea id="info" style="position: absolute; font-family: Arial; font-size: 14px;"></textarea>
   </div>
 </div>
+<input type="text" value="{{ bsValue | date:'yMd'}}" bsDatepicker [(bsValue)]="bsValue" placeholder="Select Date">
 <div id="map" style="height: 500px"></div>

@@ -11,11 +11,12 @@ export class AccountComponent implements OnInit {
 
   drawingManager;
   selectedShape;
+  public bsValue: any;
 
   clearSelection() {
     if (this.selectedShape) {
       this.selectedShape.setEditable(false);
-      this.selectedShape = null;
+      // this.selectedShape = null;
     }
   }
 
@@ -134,6 +135,9 @@ export class AccountComponent implements OnInit {
     }
   }
 
+  getcors() {
+    this.getCoodinates();
+  }
   setDrawingMode() {
     this.drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
   }
