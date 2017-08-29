@@ -1,5 +1,25 @@
 <div class="form-group">
   <label [for]="name" *ngIf="lname">{{lname}}:</label>
-  <input [type]="type" class="form-control" [id]="name" [name]="name" [placeholder]="hint" [(ngModel)]="value" (blur)="onTouched($event)">
+
+    <input class="form-control" 
+      [id]="name" 
+      [(ngModel)]="value" 
+      [name]="name" 
+
+      [type]="_type"       
+
+      (blur)="onTouched($event)"
+      (input)="onInput($event)"
+
+      [attr.min]="min"
+      [attr.max]="max"
+      [attr.step]="step"
+      [attr.autocomplete]="autocomplete"
+      [attr.autocorrect]="autocorrect" 
+
+      [disabled]="_disabled"
+      [readonly]="_readonly"
+      [placeholder]="hint">
+
   <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 </div>

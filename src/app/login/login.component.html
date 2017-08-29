@@ -18,8 +18,16 @@
   </div>
   <form (ngSubmit)="validate(f)" #f="ngForm" autocomplete="off" novalidate name="FormName">
 
-    <app-input type="text" name="username" hint="UserName" ngModel id="name" required minlength="4" maxlength="24" #name="ngModel"></app-input>
-    <small *ngIf="name.errors && (name.dirty || name.touched)" class="form-text text-muted">
+    <app-input 
+      name="username" 
+      hint="UserName" 
+      ngModel
+      required 
+      min="4" 
+      max="24" 
+      ></app-input>
+
+<!--     <small *ngIf="name.errors && (name.dirty || name.touched)" class="form-text text-muted">
       <p [hidden]="!name?.errors.required">
         Name is required
       </p>
@@ -29,9 +37,9 @@
     <small [hidden]="!name?.errors.maxlength">
         Name cannot be more than 24 characters long.
       </small>
-    </small>
-    <!-- 
-    <strong>Has input been touched: {{name.touched ? 'Yes' : 'No'}}</strong><br>
+    </small> -->
+    
+<!--     <strong>Has input been touched: {{name.touched ? 'Yes' : 'No'}}</strong><br>
     <strong>Is input untouched: {{name.untouched ? 'Yes' : 'No'}}</strong><br>
     <strong>Is input dirty: {{name.dirty ? 'Yes' : 'No'}}</strong> <br>
     <strong>Is input pristine: {{name.pristine ? 'Yes' : 'No'}}</strong> -->
@@ -61,10 +69,7 @@
         culpa.
       </span>
       <div class="one">
-        <app-radio [(ngModel)]="gender" v="male" name="gender" required></app-radio>
-        <app-radio [(ngModel)]="gender" v="Female" name="gender" required></app-radio>
-        <app-radio [(ngModel)]="gender" v="Cross" name="gender" required></app-radio>
-        <app-radio [(ngModel)]="gender" v="Kolx" name="gender" required></app-radio>
+        <app-radio [(ngModel)]="gender" name="gender" [v]="i" *ngFor="let i of ['male','Female','Cross','Kolx']" required></app-radio>
       </div>
     </div>
 
