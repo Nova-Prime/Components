@@ -60,6 +60,11 @@ export class LoginComponent {
     'Summer',
     'Autumn',
   ];
+
+
+
+
+  
   gender: string;
   public modalRef: BsModalRef;
   public data = [
