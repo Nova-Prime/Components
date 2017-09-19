@@ -18,16 +18,9 @@
   </div>
   <form (ngSubmit)="validate(f)" #f="ngForm" autocomplete="off" novalidate name="FormName">
 
-    <app-input 
-      name="username" 
-      hint="UserName" 
-      ngModel
-      required 
-      min="4" 
-      max="24" 
-      ></app-input>
+    <app-input name="username" hint="UserName" ngModel required min="4" max="24"></app-input>
 
-<!--     <small *ngIf="name.errors && (name.dirty || name.touched)" class="form-text text-muted">
+    <!--     <small *ngIf="name.errors && (name.dirty || name.touched)" class="form-text text-muted">
       <p [hidden]="!name?.errors.required">
         Name is required
       </p>
@@ -38,8 +31,8 @@
         Name cannot be more than 24 characters long.
       </small>
     </small> -->
-    
-<!--     <strong>Has input been touched: {{name.touched ? 'Yes' : 'No'}}</strong><br>
+
+    <!--     <strong>Has input been touched: {{name.touched ? 'Yes' : 'No'}}</strong><br>
     <strong>Is input untouched: {{name.untouched ? 'Yes' : 'No'}}</strong><br>
     <strong>Is input dirty: {{name.dirty ? 'Yes' : 'No'}}</strong> <br>
     <strong>Is input pristine: {{name.pristine ? 'Yes' : 'No'}}</strong> -->
@@ -63,15 +56,43 @@
       </div>
     </div>
 
+    <div>
+      <div class="md-radio md-radio-inline">
+        <input type="radio" [(ngModel)]="gender" value="male" name="gender" id="gender">
+        <label for="gender">male</label>
+      </div>
+      <div class="md-radio md-radio-inline">
+        <input type="radio" [(ngModel)]="gender" value="Female" name="gender" id="gender">
+        <label for="gender">Female</label>
+      </div>
+      <div class="md-radio md-radio-inline">
+        <input type="radio" [(ngModel)]="gender" value="Cross" name="gender" id="gender">
+        <label for="gender">Cross</label>
+      </div>
+    </div>
+
     <div class="radio-group">
       <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio est laborum quaerat aliquam, autem repellat facilis
         asperiores repudiandae. Possimus fuga suscipit dolorem expedita, voluptatibus debitis minus, fugit molestias maiores
         culpa.
       </span>
       <div class="one">
-        <app-radio [(ngModel)]="gender" name="gender" [v]="i" *ngFor="let i of ['male','Female','Cross','Kolx']" required></app-radio>
+        <app-radio [(ngModel)]="gender1" name="gender1" [v]="i" *ngFor="let i of ['male','Female','Cross','Kolx']" required></app-radio>
       </div>
     </div>
+
+    <md-radio-group class="example-radio-group" [(ngModel)]="favoriteSeason" name="favoriteSeason">
+      <md-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+        {{season}}
+      </md-radio-button>
+    </md-radio-group>
+    <div class="example-selected-value">Your favorite season is: {{favoriteSeason}}</div>
+    <md-radio-group class="example-radio-group" [(ngModel)]="favoriteSeason1" name="favoriteSeason1">
+      <md-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+        {{season}}
+      </md-radio-button>
+    </md-radio-group>
+    <div class="example-selected-value">Your favorite season is: {{favoriteSeason1}}</div>
 
 
     <app-select ngModel name="select" id="select-me" [options]="data"></app-select>

@@ -18,4 +18,6 @@ import { Component, forwardRef, Input, OnInit } from '@angular/core';
 
 export class RadioComponent extends ValueAccessor {
     @Input() v: string;
+    @Input() name: string;
+    
 }

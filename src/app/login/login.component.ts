@@ -52,6 +52,14 @@ interface RootObject {
   providers: [SharedService]
 })
 export class LoginComponent {
+  favoriteSeason: string;
+
+  seasons = [
+    'Winter',
+    'Spring',
+    'Summer',
+    'Autumn',
+  ];
   gender: string;
   public modalRef: BsModalRef;
   public data = [

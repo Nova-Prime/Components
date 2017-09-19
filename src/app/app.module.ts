@@ -31,6 +31,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { InputComponent } from './components/input/input.component';
 import { LoginComponent, ModalContentComponent } from './login/login.component';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdRadioModule } from '@angular/material';
 
 const _declarations = [
   AppComponent,
@@ -58,7 +60,9 @@ const _imports = [
   FormsModule,
   AppRoutingModule,
   ModalModule.forRoot(),
-  BsDatepickerModule.forRoot()
+  BsDatepickerModule.forRoot(),
+  BrowserAnimationsModule,
+  MdRadioModule
 ];
 
 const _providers = [
